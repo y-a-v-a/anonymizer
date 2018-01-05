@@ -10,7 +10,7 @@ cv.readImage('./image.jpg', (error, image) => {
 
     console.log(eyes);
 
-    for(let i = 0; i < eyes.length; i+=2) {
+    for(let i = 0; i < eyes.length; i += 2) {
       let eye1 = eyes[i];
       let eye2 = eyes[i + 1];
       if (!eye2) {
@@ -26,7 +26,7 @@ cv.readImage('./image.jpg', (error, image) => {
       image.rectangle([x, y], [width, height], [0,0,0], -1);
     }
 
-    let imageAsBuffer = image.toBuffer({ext: ".jpg", jpegQuality: 80});
+    let imageAsBuffer = image.toBuffer({ext: '.jpg', jpegQuality: 80});
     let gdImage = gd.createFromJpegPtr(imageAsBuffer);
 
     let imageName = `./out-${Date.now()}.jpg`;
